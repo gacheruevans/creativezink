@@ -1,10 +1,8 @@
 version: 2.1
 # Workflows are used to partition jobs
-
 orbs: 
-  aws-ecs: circleci/aws-ecs@2.2.1
+  aws-code-deploy: circleci/aws-code-deploy@1.0.1
 # the version of the yml
-
 workflows:
   # this is one workflow with a job defined
   # you can have more than one of it
