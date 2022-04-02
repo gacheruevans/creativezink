@@ -47,14 +47,22 @@
 
 .title,
 .description {
-  text-align: center;
+    font-size: 40px;
+    font-family: Eina03;
+    color: rgb(17, 35, 53);
+    line-height: 1.25;
+    text-align: center;
+    max-width: 600px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    margin-bottom: 30px;
 }
 
-.description {
+/* .description {
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
-}
+} */
 
 .code {
   background: #fafafa;
@@ -104,8 +112,8 @@
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  /* height: em; */
+  margin:0 0.5rem 0;
 }
 
 @media (max-width: 600px) {

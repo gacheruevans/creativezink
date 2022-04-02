@@ -1,22 +1,30 @@
-orbs:
-    # the name of the orb we are using
-    aws-code-deploy: circleci/aws-code-deploy@1.0.1
-# the version of the yml
 version: 2.1
-# Workflows are used to partition jobs
+orbs:
+  aws-cli: circleci/aws-cli@1.3
+  aws-ecs: circleci/aws-ecs@2.0
+jobs:
+  verify-deployment:
+    docker:
+      - image: cimg/node:16.14.2
+    steps:
+      - aws-cli/setup:
+          aws-access-key-id: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_DEFAULT_REGION
+          aws-secret-access-key: AWS_DEFAULT_REGION
+      - run:
+          command: >
+            TASK_DEFINITION_ARN=$(aws ecs describe-task-definition \
+                --task-definition ${MY_APP_PREFIX}-service \
+                --output text \
+                --query 'taskDefinition.taskDefinitionArn')
+            echo "export TASK_DEFINITION_ARN='${TASK_DEFINITION_ARN}'" >>
+            $BASH_ENV
+          name: Get last task definition
+      - aws-ecs/verify-revision-is-deployed:
+          cluster-name: '${MY_APP_PREFIX}-cluster'
+          family: '${MY_APP_PREFIX}-service'
+          task-definition-arn: '${TASK_DEFINITION_ARN}'
 workflows:
-  # this is one workflow with a job defined
-  # you can have more than one of it
-  deploy_application:
-    
-    # jobs are used to perform actions i.e. run instructions
+  test-workflow:
     jobs:
-        # This is the name of the job being run
-        # You can run more than one job
-        # The job accepts the following parameters
-        - aws-code-deploy/deploy:
-            application-name: $APP_NAME
-            bundle-bucket: $BUNDLE_BUCKET
-            bundle-key: code/source
-            deployment-group: master
-            service-role-arn: $ARN
+      - verify-deployment
