@@ -1,6 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import NavBar from './components/header'
+import Counter from './components/countdown'
+import Footer from './components/footer'
 import styles from '../styles/Home.module.css'
+
 
 export default function Home() {
   return (
@@ -10,21 +13,11 @@ export default function Home() {
         <meta name="description" content="Creativez Ink" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <NavBar/>
       <main className={styles.main}>
-        <span className={styles.logo}>
-          <Image src="/creativez-ink-logo.png" alt="Company Logo" width={200} height={200} />
-        </span>
-
-        <p className={styles.description}>
-            We are launching soon please stay tuned!
-        </p>
-
+        <Counter/>
       </main>
-
-      <footer className={styles.footer}>
-          Copyrigth 2022 by Creativezink. All rights reserved
-      </footer>
+      <Footer/>
     </div>
   )
 }

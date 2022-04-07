@@ -1,10 +1,10 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0rem;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -47,8 +47,8 @@
 
 .title,
 .description {
-    font-size: 40px;
-    font-family: Eina03;
+    font-size: 35px;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: rgb(17, 35, 53);
     line-height: 1.25;
     text-align: center;
@@ -56,6 +56,18 @@
     font-weight: 400;
     letter-spacing: -0.25px;
     margin-bottom: 30px;
+}
+
+.sub_description {
+  font-size: 20px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: rgb(148, 148, 148);
+  line-height: 1.25;
+  text-align: center;
+  max-width: 600px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  margin-bottom: 30px;
 }
 
 /* .description {
@@ -115,10 +127,26 @@
   /* height: em; */
   margin:0 0.5rem 0;
 }
-
+.navLogo {
+  padding-top:25px;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
   }
+}
+.countdown {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.day,
+.hour,
+.minute,
+.second {
+  color: rgb(14 165 233);
+  font-size: 3rem;
 }
