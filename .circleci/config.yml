@@ -1,20 +1,23 @@
 version: 2.1
-# Workflows are used to partition jobs
-orbs: 
-  aws-code-deploy: circleci/aws-code-deploy@1.0.1
-# the version of the yml
-workflows:
-  # this is one workflow with a job defined
-  # you can have more than one of it
-  deploy_application:
-    # jobs are used to perform actions i.e. run instructions
-    jobs:
-        # This is the name of the job being run
-        # You can run more than one job
-        # The job accepts the following parameters
-        - aws-code-deploy/deploy:
-            application-name: $APP_NAME
-            bundle-bucket: $BUNDLE_BUCKET
-            bundle-key: resources/source
-            deployment-group: master
-            service-role-arn: $ARN
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:16.14.2
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: "sudo npm unstall -g npm@latest"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json"}}
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json"}}
+          paths: 
+            - ./node_modules
+      - run:
+          name: dev
+          command: npm run dev
