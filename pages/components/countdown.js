@@ -11,7 +11,7 @@ export default function CountDown() {
     let interval = useRef();
 
     const CountdownTimer =() => {
-        const countDate = new Date('April 28, 2022 00:00:00').getTime();
+        const countDate = new Date('May 28, 2022 00:00:00').getTime();
 
         interval = setInterval(()=> {
             const now = new Date().getTime();
@@ -30,6 +30,7 @@ export default function CountDown() {
             if(gap < 0) {
                 //Stop timer
                 clearInterval(interval.current);
+                const hideContdown = true;
             }else {
                 //update timer
                 setTimerDays(timerDays);
@@ -55,14 +56,17 @@ export default function CountDown() {
                     <h3 className={styles.day}>{timerDays}</h3>
                     <h3 className="text-stone-400">Days</h3>
                 </div>
+                <h3 className={styles.colon} >:</h3>
                 <div className="container-hour">
                     <h3 className={styles.hour}>{timerHours}</h3>
                     <h3 className="text-stone-400">Hours</h3>
                 </div>
+                <h3 className={styles.colon} >:</h3>
                 <div className="container-minute">
                     <h3 className={styles.minute}>{timerMinutes}</h3>
                     <h3 className="text-stone-400">Minutes</h3>
                 </div>
+                <h3 className={styles.colon} >:</h3>
                 <div className="container-second">
                     <h3 className={styles.second}>{timerSeconds}</h3>
                     <h3 className="text-stone-400">Seconds</h3>
@@ -71,7 +75,7 @@ export default function CountDown() {
             <span className={styles.logo}>
                 <img src="/launch.png" alt="Company Logo"/>
             </span>
-            <p className={styles.description}>
+            <p id="launchtxt" className={styles.description}>
                 We are launching soon please stay tuned!
             </p>
             <p className={styles.sub_description}>
