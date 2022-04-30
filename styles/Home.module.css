@@ -146,7 +146,8 @@
 .day,
 .hour,
 .minute,
-.second {
-  color: rgb(14 165 233);
+.second,
+.colon {
+  color: #0ea5e9;
   font-size: 3rem;
 }

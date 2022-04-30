@@ -6,6 +6,7 @@ const nextConfig = {
     loader: 'imgix',
     path: '/public',
   },
+  // distDir: 'build',
 }
 
 module.exports = nextConfig
