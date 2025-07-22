@@ -28,7 +28,7 @@ const features = [
 
 export default function Hero() {
   return (
-    <div className="py-24 overflow-hidden bg-gray-900 sm:py-32">
+    <div id="home" className="py-24 overflow-hidden bg-gray-900 sm:py-32">
       <Navbar />
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
         <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
@@ -39,8 +39,7 @@ export default function Hero() {
                 Get a consultation with our team
               </p>
               <p className="mt-6 text-gray-300 text-lg/8">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                iste dolor cupiditate blanditiis ratione.
+              At CreativezInk, we understand that no two businesses are the same - so why should your software be? Our expert-led consultation process is designed to uncover your unique needs, offer strategic advice, and help you choose the right tech solutions to accelerate your growth. Whether you're looking to build a new platform from scratch or optimize an existing one, our team of seasoned developers and consultants is ready to guide you through every step of the journey.
               </p>
               <dl className="max-w-xl mt-10 space-y-8 text-gray-400 text-base/7 lg:max-w-none">
                 {features.map((feature) => (
@@ -55,9 +54,10 @@ export default function Hero() {
               </dl>
             </div>
           </div>
-          <img
+          <Image
+            priority
             alt="Product screenshot"
-            src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
+            src="/unsplash-resources/developer-desk.jpg"
             width={2432}
             height={1442}
             className="shadow-xl w-3xl max-w-none rounded-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
