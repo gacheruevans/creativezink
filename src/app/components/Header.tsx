@@ -55,11 +55,11 @@ const Navbar = () => {
     };
    
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="fixed bg-slate-900 inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
             <div className="flex lg:flex-1">
-                <Link href="/" className="-m-1.5 p-1.5">
-                    <p className="text-white font-semibold w-auto h-20">CreativezInk</p>
+                <Link href="/" className="-m-1.5 p-1.5 mx-10 mt-4 text-center">
+                    <p className="text-white w-auto h-10 text-2xl">CreativezInk</p>
                 </Link>
             </div>
             <div className="flex lg:hidden">

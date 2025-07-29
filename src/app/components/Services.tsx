@@ -4,7 +4,7 @@ import React from 'react'
 const Services = () => {
 
   return (
-    <div className="py-24 bg-gray-50 sm:py-32">
+    <div id="services" className="py-24 bg-gray-50 sm:py-32">
       <div className="max-w-2xl px-6 mx-auto lg:max-w-7xl lg:px-8">
         <h2 className="font-semibold text-center text-indigo-600 text-base/7">Deploy faster</h2>
         <p className="max-w-lg mx-auto mt-2 text-4xl font-semibold tracking-tight text-center text-balance text-gray-950 sm:text-5xl">
