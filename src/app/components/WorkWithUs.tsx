@@ -3,16 +3,13 @@ import React from 'react'
 import Image from 'next/image'
 
 const links = [
-  { name: 'Open roles', href: '#' },
-  { name: 'Internship program', href: '#' },
-  { name: 'Our values', href: '#' },
-  { name: 'Meet our leadership', href: '#' },
+  { name: 'Open roles', href: '#roles' },
+  { name: 'Internship program', href: '#internship' },
+  { name: 'Our values', href: '#values' },
 ]
 const stats = [
-  { name: 'Offices worldwide', value: '12' },
-  { name: 'Full-time colleagues', value: '300+' },
+  { name: 'Full-time colleagues', value: '2' },
   { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
 ]
 
 const WorkWithUs = () => {
@@ -53,8 +50,7 @@ const WorkWithUs = () => {
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Work with us</h2>
           <p className="mt-8 text-lg font-medium text-gray-300 text-pretty sm:text-xl/8">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-            fugiat veniam occaecat fugiat.
+            Want to work with a cross functional team? COme join us.
           </p>
         </div>
         <div className="max-w-2xl mx-auto mt-10 lg:mx-0 lg:max-w-none">
