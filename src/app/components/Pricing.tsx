@@ -14,30 +14,49 @@ interface Tier {
 
 const tiers: Tier[] = [
     {
-        name: 'Hobby',
-        id: 'tier-hobby',
+        name: 'Basic',
+        id: 'basic',
         href: '#',
-        priceMonthly: '$29',
-        description: "The perfect plan if you're just getting started with our product.",
-        features: ['25 products', 'Up to 10,000 subscribers', 'Advanced analytics', '24-hour support response time'],
+        priceMonthly: '$184',
+        description: "Perfect for small businesses or startups needing a professional web presence without ongoing maintenance.",
+        features: ['4-page responsive website', 'custom design iteration', 'Consultation on best framework', 'No hosting or maintenance included'],
         featured: false,
     },
     {
         name: 'Enterprise',
         id: 'tier-enterprise',
         href: '#',
-        priceMonthly: '$99',
-        description: 'Dedicated support and infrastructure for your company.',
+        priceMonthly: '$2750',
+        description: 'Our premium solution for enterprises that need a fully customized, secure, and scalable platform.',
         features: [
-            'Unlimited products',
-            'Unlimited subscribers',
-            'Advanced analytics',
-            'Dedicated support representative',
-            'Marketing automations',
-            'Custom integrations',
+          'Fully custom website (4 iterations)',
+          'Admin Dashboard & User login access',
+          'Database support',
+          'SEO setup + CI/CD deployment pipelines',
+          'Hosting & domain included',
+          'Technical documentation',
+          'Full maintenance & support $800/month'
         ],
         featured: true,
     },
+    {
+        name: 'Standard',
+        id: 'standard',
+        href: '#',
+        priceMonthly: '$898',
+        description: "Ideal for SMEs seeking a complete digital solution with hosting, database, and admin capabilities.",
+        features: [
+          'Hosting & domain included',
+          '4-page responsive website',
+          'custom design iterations',
+          'Admin Dashboard & User login access',
+          'Database support',
+          'Email hosting & integration',
+          'Optional maintenance: $500/month'
+        ],
+        featured: false,
+    },
+    
 ]
 
 function classNames(...classes: (string | false | null | undefined)[]): string {
@@ -59,14 +78,13 @@ export default function Pricing() {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="font-semibold text-indigo-600 text-base/7">Pricing</h2>
         <p className="mt-2 text-5xl font-semibold tracking-tight text-gray-900 text-balance sm:text-6xl">
-          Choose the right plan for you
+          Choose the Right Plan for Your Business
         </p>
       </div>
       <p className="max-w-2xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
-        Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
-        loyalty, and driving sales.
+        Our flexible plans are designed to meet businesses at every stage of growth, from startups seeking a simple web presence to enterprises that need fully customized, scalable solutions.
       </p>
-      <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
+      <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
