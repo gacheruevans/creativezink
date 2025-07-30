@@ -3,12 +3,12 @@ import React from 'react'
 import Image from 'next/image'
 
 const links = [
-  { name: 'Open roles', href: '#roles' },
-  { name: 'Internship program', href: '#internship' },
-  { name: 'Our values', href: '#values' },
+  { name: 'Open roles', href: '/roles' },
+  { name: 'Internship program', href: '/internship' },
+  { name: 'Our values', href: '/values' },
 ]
 const stats = [
-  { name: 'Full-time colleagues', value: '2' },
+  { name: 'Full-time colleagues', value: '15' },
   { name: 'Hours per week', value: '40' },
 ]
 
@@ -19,8 +19,8 @@ const WorkWithUs = () => {
         alt="background image"
         width={2830}
         height={1500}
-        src="/hero-bg-royal.jpg"
-        className="absolute inset-0 object-cover opacity-60 object-right -z-10 size-full md:object-center"
+        src="/office-lobby.jpg"
+        className="absolute inset-0 blur-sm object-cover opacity-60 object-right -z-10 size-full md:object-center"
       />
       <div
         aria-hidden="true"
