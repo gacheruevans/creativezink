@@ -1,10 +1,11 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 
 const Services = () => {
 
   return (
-    <div className="py-24 bg-gray-50 sm:py-32">
+    <div id="services" className="py-24 bg-gray-50 sm:py-32">
       <div className="max-w-2xl px-6 mx-auto lg:max-w-7xl lg:px-8">
         <h2 className="font-semibold text-center text-indigo-600 text-base/7">Deploy faster</h2>
         <p className="max-w-lg mx-auto mt-2 text-4xl font-semibold tracking-tight text-center text-balance text-gray-950 sm:text-5xl">
@@ -12,14 +13,14 @@ const Services = () => {
         </p>
         <div className="grid gap-4 mt-10 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
-            <div className="absolute bg-white rounded-lg inset-px lg:rounded-l-4xl" />
+            <div className="absolute bg-purple-500 rounded-lg inset-px lg:rounded-l-4xl" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
               <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
                   Mobile friendly
                 </p>
-                <p className="max-w-lg mt-2 text-gray-600 text-sm/6 max-lg:text-center">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+                <p className="max-w-lg mt-2 text-white text-sm/6 max-lg:text-center">
+                  Reach your users anytime, anywhere. We design and develop responsive mobile-first solutions that deliver a seamless experience across Android, iOS, and web devices.
                 </p>
               </div>
               <div className="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
@@ -38,9 +39,9 @@ const Services = () => {
             <div className="absolute bg-white rounded-lg inset-px max-lg:rounded-t-4xl" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Performance</p>
-                <p className="max-w-lg mt-2 text-gray-600 text-sm/6 max-lg:text-center">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit maiores impedit.
+                <p className="mt-2 text-lg font-medium tracking-tight text-blue-800 max-lg:text-center">Performance</p>
+                <p className="max-w-lg mt-2 text-slate-800 text-sm/6 max-lg:text-center">
+                  Our optimized deployment pipelines ensure your apps run fast and efficiently, giving users a smooth experience while scaling effortlessly with your business growth.
                 </p>
               </div>
               <div className="flex items-center justify-center flex-1 px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
@@ -54,12 +55,12 @@ const Services = () => {
             <div className="absolute rounded-lg shadow-sm pointer-events-none inset-px outline outline-black/5 max-lg:rounded-t-4xl" />
           </div>
           <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute bg-white rounded-lg inset-px" />
+            <div className="absolute bg-blue-400 rounded-lg inset-px" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Security</p>
-                <p className="max-w-lg mt-2 text-gray-600 text-sm/6 max-lg:text-center">
-                  Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi.
+                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Security</p>
+                <p className="max-w-lg mt-2 text-white text-sm/6 max-lg:text-center">
+                  Your business data is safe with us. We integrate enterprise-grade security, SSL encryption, and automated backups to keep your applications and customer information protected.
                 </p>
               </div>
               <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
@@ -73,14 +74,14 @@ const Services = () => {
             <div className="absolute rounded-lg shadow-sm pointer-events-none inset-px outline outline-black/5" />
           </div>
           <div className="relative lg:row-span-2">
-            <div className="absolute bg-white rounded-lg inset-px max-lg:rounded-b-4xl lg:rounded-r-4xl" />
+            <div className="absolute bg-amber-400 rounded-lg inset-px max-lg:rounded-b-4xl lg:rounded-r-4xl" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
               <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
                   Powerful APIs
                 </p>
-                <p className="max-w-lg mt-2 text-gray-600 text-sm/6 max-lg:text-center">
-                  Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.
+                <p className="max-w-lg mt-2 text-white text-sm/6 max-lg:text-center">
+                  Extend functionality with secure, well-documented APIs that connect your software to third-party tools, enabling automation, data exchange, and enhanced capabilities.
                 </p>
               </div>
               <div className="relative w-full min-h-120 grow">
