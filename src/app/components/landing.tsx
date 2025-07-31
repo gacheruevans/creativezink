@@ -52,7 +52,7 @@ export default function Landing() {
               >
                 Get started
               </a>
-              <a href="#pricing" className="font-semibold text-gray-900 hover:text-white text-sm/6">
+              <a href="#pricing" className="font-semibold text-white hover:text-gray-900 text-sm/6">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
