@@ -10,9 +10,9 @@ const links = [
 ]
 const stats = [
   { name: 'Offices worldwide', value: '1' },
-  { name: 'Full-time Crossfunctional colleagues', value: '10' },
-  { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off annually', value: '21' },
+  { name: 'Full-time cross-functional colleagues', value: '10' },
+  { name: 'Working hours per week', value: '40' },
+  { name: 'Annual paid time off ', value: '21' },
 ]
 
 const WorkWithUs = () => {
@@ -23,7 +23,7 @@ const WorkWithUs = () => {
         width={2830}
         height={1500}
         src="/office-lobby-bg.jpg"
-        className="absolute inset-0 object-cover  opacity-60 blur-xs object-right -z-10 size-full md:object-center"
+        className="absolute inset-0 object-cover  opacity-90 blur-xs object-right -z-10 size-full md:object-center"
       />
       <div
         aria-hidden="true"
