@@ -1,17 +1,28 @@
 'use client'
 import React from 'react'
 import  Image from 'next/image'
+import Link from 'next/link'
 
 const people = [
   {
     name: 'Evans Gacheru Munene',
     role: 'Founder / CEO',
+    socials: [
+      { name:'LinkedIn', href:'https://www.linkedin.com/in/evansgacheru/' },
+      { name: 'X', href: '' },
+      { name: 'Medium', href:'' },
+    ],
     imageUrl:
       '/ceo-profile.jpeg',
   },
   {
     name: 'Maurine Nyambura Gacheru',
-    role: 'Financial Manager',
+    role: 'Financial Reporting Analyst',
+    socials: [
+      {name:'LinkedIn', href:''},
+      { name: 'X', href: '' },
+      { name: 'Medium', href:'' },
+    ],
     imageUrl:
       '/fm-profile.png',
   }
@@ -35,15 +46,25 @@ const Team = () => {
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
                 <Image
-                  alt=""
+                  alt="profiles"
                   src={person.imageUrl}
-                  width={16}
-                  height={16}
+                  width={64}
+                  height={64}
                   className="rounded-full size-16 outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div>
                   <h3 className="font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
                   <p className="font-semibold text-indigo-600 text-sm/6">{person.role}</p>
+                  <div className='flex flex-row'>
+                    {person.socials.map((item)=>
+                      item.href &&
+                      (
+                        <Link key={item.name} href={item.href} className="font-semibold text-indigo-600 text-sm/6 hover:text-indigo-900">
+                          {item.name}
+                        </Link>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
             </li>

@@ -1,71 +1,76 @@
 'use client'
-import React from 'react'
-import Navbar from './Header'
+import { Dialog, DialogPanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 import Image from 'next/image'
 
-
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, UserGroupIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
-import Landing from './landing'
-
-const features = [
-
-  {
-    name: 'Automation.',
-    description:
-      'Reduce manual tasks and improve productivity with custom business process automation.',
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: 'Boost Customer Engagement.',
-    description: ' Build loyalty and increase sales through tailored web, mobile, and CRM solutions.',
-    icon: UserGroupIcon,
-  },
-  {
-    name: 'Scale Without Limits.',
-    description: 'Access cloud-ready, secure platforms that grow alongside your business.',
-    icon: RectangleGroupIcon,
-  },
-]
-
 export default function Hero() {
+
   return (
-    <div id="home" className="py-24 overflow-hidden bg-gray-900 sm:py-32">
-      <Navbar />
-      <Landing />
-      <div className="px-6 mx-auto max-w-7xl lg:px-8">
-        <div className="mt-30 grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pt-4 lg:pr-8">
-            <div className="lg:max-w-lg">
-              <h2 className="font-semibold text-indigo-400 text-base/7">Invest In Great Development</h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-white text-pretty sm:text-5xl">
-                Automate, Customer Engagement & Scale
-              </p>
-              <p className="mt-6 text-gray-300 text-lg/8">
-              Empower your small and medium enterprise with smart, scalable software solutions that drive growth and operational efficiency. At CreativezInk, we help SMEs simplify processes, reach new customers, and stay competitive in a digital-first world.
-              </p>
-              <dl className="max-w-xl mt-10 space-y-8 text-gray-400 text-base/7 lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-white">
-                      <feature.icon aria-hidden="true" className="absolute text-indigo-400 top-1 left-1 size-5" />
-                      {feature.name}
-                    </dt>{' '}
-                    <dd className="inline">{feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
+    <section id="home" className="bg-slate-900">
+      <div className="py-24 mt-20 relative px-6 isolate pt-14 lg:px-8">
+        <Image
+          alt="background image"
+          width={2830}
+          height={1500}
+          src="/nairobibg.jpg"
+          className="absolute inset-0 blur-xs object-cover opacity-90 object-right -z-10 size-full md:object-center"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-80"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
+          />
+        </div>
+        <div className="max-w-2xl py-32 mx-auto sm:py-48 lg:py-56">
+          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="relative px-3 py-1 bg-white text-slate-700 rounded-full text-sm/6 ring-1 ring-gray-900/10 hover:ring-gray-900/20 hover:bg-slate-100">
+              Review our Terms & Conditions.{' '}
+              <Link href="/terms-conditions" className="font-semibold text-indigo-600">
+                <span aria-hidden="true" className="absolute inset-0" />
+                Read more <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
           </div>
-          <Image
-            priority
-            alt="Product screenshot"
-            src="/about04.png"
-            width={2432}
-            height={1442}
-            className="shadow-xl w-3xl max-w-none rounded-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
+          <div className="text-center">
+            <h1 className="text-2xl font-semibold tracking-tight text-white text-balance sm:text-7xl">
+              Solutions that enrich SMEs
+            </h1>
+            <p className="mt-8 text-lg font-medium text-white text-pretty sm:text-xl/8">
+              Empower your small and medium enterprise with digital solutions designed to drive growth, efficiency, and profitability.
+            </p>
+            <div className="flex items-center justify-center mt-10 gap-x-6">
+              <a
+                href="#pricing"
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Get started
+              </a>
+              <a href="#pricing" className="font-semibold text-white hover:text-gray-900 text-sm/6">
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

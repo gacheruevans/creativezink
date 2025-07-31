@@ -1,56 +1,66 @@
 'use client'
+import React from 'react'
+import Navbar from './Header'
+import Image from 'next/image'
+import { CloudArrowUpIcon, UserGroupIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
 
-const About = () => {
+const features = [
+  {
+    name: 'Automation.',
+    description:
+      'Reduce manual tasks and improve productivity with custom business process automation.',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'Boost Customer Engagement.',
+    description: ' Build loyalty and increase sales through tailored web, mobile, and CRM solutions.',
+    icon: UserGroupIcon,
+  },
+  {
+    name: 'Scale Without Limits.',
+    description: 'Access cloud-ready, secure platforms that grow alongside your business.',
+    icon: RectangleGroupIcon,
+  },
+]
+
+export default function About() {
   return (
-    <div id="about" className="bg-white">
-      <div className="py-24 mx-auto max-w-7xl sm:px-6 sm:py-32 lg:px-8">
-        <div className="relative px-6 pt-16 overflow-hidden bg-gray-900 shadow-2xl isolate sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-          <svg
-            viewBox="0 0 1024 1024"
-            aria-hidden="true"
-            className="absolute top-1/2 left-1/2 -z-10 size-256 -translate-y-1/2 mask-[radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
-          >
-            <circle r={512} cx={512} cy={512} fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
-            <defs>
-              <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stopColor="#7775D6" />
-                <stop offset={1} stopColor="#E935C1" />
-              </radialGradient>
-            </defs>
-          </svg>
-          <div className="max-w-md mx-auto text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 className="text-3xl font-semibold tracking-tight text-white text-balance sm:text-4xl">
-              Boost your productivity. Start using our app today.
-            </h2>
-            <p className="mt-6 text-gray-300 text-lg/8 text-pretty">
-              Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
-            </p>
-            <div className="flex items-center justify-center mt-10 gap-x-6 lg:justify-start">
-              <a
-                href="#"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                {' '}
-                Get started{' '}
-              </a>
-              <a href="#" className="font-semibold text-white text-sm/6 hover:text-gray-100">
-                Learn more
-                <span aria-hidden="true">→</span>
-              </a>
+    <div id="about" className="py-24 overflow-hidden bg-gray-900 sm:py-32">
+      <Navbar />
+      <div className="px-6 mx-auto max-w-7xl lg:px-8">
+        <div className="mt-30 grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="lg:pt-4 lg:pr-8">
+            <div className="lg:max-w-lg">
+              <h2 className="font-semibold text-indigo-400 text-base/7">Invest In Great Development</h2>
+              <p className="mt-2 text-4xl font-semibold tracking-tight text-white text-pretty sm:text-5xl">
+                Automate, Customer Engagement & Scale
+              </p>
+              <p className="mt-6 text-gray-300 text-lg/8">
+              Empower your small and medium enterprise with smart, scalable software solutions that drive growth and operational efficiency. At CreativezInk, we help SMEs simplify processes, reach new customers, and stay competitive in a digital-first world.
+              </p>
+              <dl className="max-w-xl mt-10 space-y-8 text-gray-400 text-base/7 lg:max-w-none">
+                {features.map((feature) => (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-white">
+                      <feature.icon aria-hidden="true" className="absolute text-indigo-400 top-1 left-1 size-5" />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
-          <div className="relative mt-16 h-80 lg:mt-8">
-            <img
-              alt="App screenshot"
-              src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-              width={1824}
-              height={1080}
-              className="absolute top-0 left-0 rounded-md w-228 max-w-none bg-white/5 ring-1 ring-white/10"
-            />
-          </div>
+          <Image
+            priority
+            alt="Product screenshot"
+            src="/about04.png"
+            width={2432}
+            height={1442}
+            className="shadow-xl w-3xl max-w-none rounded-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
+          />
         </div>
       </div>
     </div>
   )
 }
-export default About

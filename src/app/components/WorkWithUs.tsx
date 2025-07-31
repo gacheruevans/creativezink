@@ -8,19 +8,21 @@ const links = [
   { name: 'Our values', href: '/values' },
 ]
 const stats = [
-  { name: 'Full-time colleagues', value: '15' },
+  { name: 'Global office', value: '1' },
+  { name: 'Full-time cross-functional colleagues', value: '10+' },
   { name: 'Hours per week', value: '40' },
+  { name: 'Annual paid leave days', value: '21' },
 ]
 
 const WorkWithUs = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gray-900 isolate sm:py-32">
+    <section id="workwithus" className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
       <Image
         alt="background image"
         width={2830}
         height={1500}
         src="/office-lobby.jpg"
-        className="absolute inset-0 blur-sm object-cover opacity-60 object-right -z-10 size-full md:object-center"
+        className="absolute inset-0 blur-xs object-cover opacity-90 object-right -z-10 size-full md:object-center"
       />
       <div
         aria-hidden="true"

@@ -6,12 +6,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navigation = [
-    {name:'home' ,href:'/'},
+    {name:'home' ,href:'/home'},
     {name:'about', href: '/about'},
     {name:'services', href:'/services'},
     {name: 'pricing', href:'/pricing'},
     {name: 'team', href:'/team'},
-    {name: 'work with us', href:'/work-with-us'},
+    {name: 'workwithus', href:'/workwithus'},
     {name:'contact', href:'/contact'},
 ];
 

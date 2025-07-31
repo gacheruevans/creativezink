@@ -19,7 +19,9 @@ const Footer = () => {
                 <p className="py-1 text-sm text-gray-300 font-weight-100">Home</p>
                 <p className="py-1 text-sm text-gray-300 font-weight-100">About</p>
                 <p className="py-1 text-sm text-gray-300 font-weight-100">Services</p>
+                <p className="py-1 text-sm text-gray-300 font-weight-100">Pricing</p>
                 <p className="py-1 text-sm text-gray-300 font-weight-100">Team</p>
+                <p className="py-1 text-sm text-gray-300 font-weight-100">Work With Us</p>
                 <p className="py-1 text-sm text-gray-300 font-weight-100">Contact</p>
             </div>
             <div>
