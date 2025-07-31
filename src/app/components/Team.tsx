@@ -22,7 +22,7 @@ const people = [
       {name:'X', href: '' },
       {name:'Medium', href: '' },
     ],
-    role: 'Financial Manager',
+    role: 'Financial Reporting Analyst',
     imageUrl:
       '/fm-profile.png',
   }
