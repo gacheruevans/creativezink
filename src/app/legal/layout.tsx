@@ -1,9 +1,9 @@
 import React ,{type ReactNode} from 'react'
-
+import Header from '../components/Header'
 const LegalLayout = ({children}: {children: ReactNode}) => {
   return (
     <div>
-        LegalLayout
+        <Header />
         {children}
     </div>
   )
