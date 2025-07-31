@@ -32,9 +32,11 @@ const tiers: Tier[] = [
           'Fully custom website (4 iterations)',
           'Admin Dashboard & User login access',
           'Database support',
-          'SEO setup + CI/CD deployment pipelines',
+          'SEO',
+          'CI/CD deployment pipelines',
           'Hosting & domain included',
           'Technical documentation',
+          'AI integrated assistant',
           'Full maintenance & support $800/month'
         ],
         featured: true,
@@ -107,7 +109,7 @@ export default function Pricing() {
             <p className="flex items-baseline mt-4 gap-x-2">
               <span
                 className={classNames(
-                  tier.featured ? 'text-white' : 'text-gray-900',
+                  tier.featured ? 'text-amber-400' : 'text-gray-900',
                   'text-5xl font-semibold tracking-tight',
                 )}
               >

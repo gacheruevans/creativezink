@@ -2,7 +2,6 @@
 import React, {useState, useEffect} from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const navigation = [
@@ -10,8 +9,8 @@ const navigation = [
     {name:'about', href: '/about'},
     {name:'services', href:'/services'},
     {name: 'pricing', href:'/pricing'},
+    {name: 'careers', href:'/workwithus'},
     {name: 'team', href:'/team'},
-    {name: 'workwithus', href:'/workwithus'},
     {name:'contact', href:'/contact'},
 ];
 
@@ -74,7 +73,7 @@ const Navbar = () => {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
                 {navigation.map((item) => (
-                    <a 
+                    <Link 
                     key={item.name} 
                     href={item.href} 
                     onClick={(e) => { 
@@ -85,14 +84,14 @@ const Navbar = () => {
                     className={`text-white capitalize transition-colors duration-300 ${ isActive ? 'border-b-blue-600': 'hover:text-slate-100'}`}
                     >
                     {item.name}
-                    </a>
+                    </Link>
                 ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                 {/* Scroll to Top Button */}
                 <button
                     onClick={handleScrollToTop}
-                    className="fixed z-50 p-3 text-white transition rounded-full shadow-lg bottom-8 right-8 bg-slate-700 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="fixed z-50 p-3 text-white transition rounded-full shadow-lg bottom-1/2 right-8 bg-amber-400 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     aria-label="Scroll to top"
                     style={{ display: showScrollTop ? 'block' : 'none' }}
                 >
@@ -104,16 +103,9 @@ const Navbar = () => {
             <div className="fixed inset-0 z-50" />
             <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
-                    <a href="#" className="-m-1.5 p-1.5">
-                    <span className="sr-only">CreativezInk</span>
-                    <Image
-                        alt=""
-                        src="/next.svg"
-                        width={32}
-                        height={32}
-                        className=""
-                    />
-                    </a>
+                    <Link href="/" className="-m-1.5 p-1.5 mx-10 mt-4 text-center">
+                        <p className="text-slate-900 w-auto h-10 text-2xl">CreativezInk</p>
+                    </Link>
                     <button
                     type="button"
                     onClick={() => setMobileMenuOpen(false)}
@@ -127,7 +119,7 @@ const Navbar = () => {
                     <div className="-my-6 divide-y divide-gray-500/10">
                         {navigation.map((item) => (
                         <div className="py-6 space-y-2" key={item.name}>
-                            <a
+                            <Link
                             key={item.name}
                             href={item.href}
                             onClick={(e) => {
@@ -135,10 +127,10 @@ const Navbar = () => {
                                 setIsActive(item.name);
                                 handleNavClick(item.name);
                             }}
-                            className={`block px-3 py-2 -mx-3 font-semibold text-white rounded-lg text-base/7 hover:bg-gray-50 ${isActive === item.name ? "item-active, border border-b-2 border-white" : " "}`}
+                            className={`block px-3 py-2 -mx-3 font-semibold text-slate-900 rounded-lg text-base/7 hover:bg-gray-50 ${isActive === item.name ? "item-active, border border-b-2 border-white" : " "}`}
                             >
                             {item.name}
-                            </a>
+                            </Link>
                         </div>
                         ))}
                     <div className="py-6">

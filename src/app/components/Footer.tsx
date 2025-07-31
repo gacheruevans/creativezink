@@ -1,5 +1,15 @@
 "use client";
 import React from 'react'
+import Link from 'next/link';
+
+const navigation =[
+    {name: 'home', href:'/home'},
+    {name: 'about', href:'/about'},
+    {name: 'services', href:'/services'},
+    {name: 'pricing', href:'/pricing'},
+    {name: 'team', href:'/team'},
+    {name: 'careers', href:'/careers'},
+];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,13 +26,11 @@ const Footer = () => {
             </div>
             <div>
                 <h2 className="mb-4 text-lg font-weight-300">Quick Links</h2>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">Home</p>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">About</p>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">Services</p>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">Pricing</p>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">Team</p>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">Work With Us</p>
-                <p className="py-1 text-sm text-gray-300 font-weight-100">Contact</p>
+                <div className='flex flex-col'>
+                    {navigation.map((link) => ( 
+                        <Link href={link.href} key={link.name} className="capitalize py-1 text-sm text-gray-300 font-weight-100">{link.name}</Link>
+                    ))}
+                </div>
             </div>
             <div>
                 <h2 className="mb-4 text-lg font-weight-300">Legal</h2>

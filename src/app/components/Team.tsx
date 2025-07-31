@@ -19,12 +19,12 @@ const people = [
     name: 'Maurine Nyambura Gacheru',
     role: 'Financial Reporting Analyst',
     socials: [
-      {name:'LinkedIn', href:''},
+      {name:'LinkedIn', href:'https://www.linkedin.com/in/nyambura-gacheru-financial-reporting-analyst/'},
       { name: 'X', href: '' },
       { name: 'Medium', href:'' },
     ],
     imageUrl:
-      '/fm-profile.png',
+      '/financial-analyst.jpeg',
   }
 ]
 
@@ -50,7 +50,7 @@ const Team = () => {
                   src={person.imageUrl}
                   width={64}
                   height={64}
-                  className="rounded-full size-16 outline-1 -outline-offset-1 outline-black/5"
+                  className="scale-125 rounded-full size-16 outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div>
                   <h3 className="font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>

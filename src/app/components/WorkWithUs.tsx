@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const links = [
   { name: 'Open roles', href: '/roles' },
@@ -16,13 +17,13 @@ const stats = [
 
 const WorkWithUs = () => {
   return (
-    <section id="workwithus" className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
+    <section id="careers" className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
       <Image
         alt="background image"
         width={2830}
         height={1500}
         src="/office-lobby.jpg"
-        className="absolute inset-0 blur-xs object-cover opacity-90 object-right -z-10 size-full md:object-center"
+        className="absolute inset-0 blur-xs opacity-75 object-cover object-right -z-10 size-full md:object-center"
       />
       <div
         aria-hidden="true"
@@ -51,22 +52,22 @@ const WorkWithUs = () => {
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Work with us</h2>
-          <p className="mt-8 text-lg font-medium text-gray-300 text-pretty sm:text-xl/8">
-            Want to work with a cross functional team? COme join us.
+          <p className="mt-8 text-lg font-medium text-white text-pretty sm:text-xl/8">
+            Want to work with a cross functional team? Join us.
           </p>
         </div>
         <div className="max-w-2xl mx-auto mt-10 lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 font-semibold text-white gap-x-8 gap-y-6 text-base/7 sm:grid-cols-2 md:flex lg:gap-x-10">
+          <div className="grid grid-cols-1 font-semibold text-white gap-x-8 gap-y-6 text-base/7 sm:grid-cols-2 md:flex lg:gap-x-10 ">
             {links.map((link) => (
-              <a key={link.name} href={link.href}>
+              <Link className="text-white hover:text-indigo-700" key={link.name} href={link.href}>
                 {link.name} <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             ))}
           </div>
           <dl className="grid grid-cols-1 gap-8 mt-16 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse gap-1">
-                <dt className="text-gray-300 text-base/7">{stat.name}</dt>
+                <dt className="text-gray-300 text-base/7 ">{stat.name}</dt>
                 <dd className="text-4xl font-semibold tracking-tight text-white">{stat.value}</dd>
               </div>
             ))}
