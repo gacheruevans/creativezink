@@ -2,12 +2,20 @@
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Landing() {
 
   return (
-    <div className="bg-blue-400">
+    <section className="bg-slate-900">
       <div className="relative px-6 isolate pt-14 lg:px-8">
+        <Image
+          alt="background image"
+          width={2830}
+          height={1500}
+          src="/nairobibg.jpg"
+          className="absolute inset-0 blur-xs object-cover opacity-60 object-right -z-10 size-full md:object-center"
+        />
         <div
           aria-hidden="true"
           className="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-80"
@@ -44,7 +52,7 @@ export default function Landing() {
               >
                 Get started
               </a>
-              <a href="#pricing" className="font-semibold text-gray-900 hover:text-white text-sm/6">
+              <a href="#pricing" className="font-semibold text-white hover:text-gray-900 text-sm/6">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -63,6 +71,6 @@ export default function Landing() {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
