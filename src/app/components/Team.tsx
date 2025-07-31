@@ -1,16 +1,27 @@
 'use client'
 import React from 'react'
 import  Image from 'next/image'
+import Link from 'next/link'
 
 const people = [
   {
     name: 'Evans Gacheru Munene',
+    social:[
+      {name:'linkedIn', href: 'https://www.linkedin.com/in/evansgacheru/' },
+      {name:'X', href: '' },
+      {name:'Medium', href: '' }
+    ],
     role: 'Founder / CEO',
     imageUrl:
       '/ceo-profile.jpeg',
   },
   {
     name: 'Maurine Nyambura Gacheru',
+    social:[
+      {name:'linkedIn', href: 'https://www.linkedin.com/in/nyambura-gacheru-financial-reporting-analyst/' },
+      {name:'X', href: '' },
+      {name:'Medium', href: '' },
+    ],
     role: 'Financial Manager',
     imageUrl:
       '/fm-profile.png',
@@ -37,13 +48,23 @@ const Team = () => {
                 <Image
                   alt=""
                   src={person.imageUrl}
-                  width={16}
-                  height={16}
+                  width={96}
+                  height={96}
                   className="rounded-full size-16 outline-1 -outline-offset-1 outline-black/5"
                 />
                 <div>
                   <h3 className="font-semibold tracking-tight text-gray-900 text-base/7">{person.name}</h3>
                   <p className="font-semibold text-indigo-600 text-sm/6">{person.role}</p>
+                  <div className="flex flex-row gap-2">
+                    {person.social.map(( item ) => 
+                      item.href && (
+                        <Link className="font-semibold text-indigo-600 text-sm/6 hover:text-indigo-900" key={item.name} href={item.href}>
+                          {item.name}
+                        </Link>
+                      )
+                      
+                    )}
+                  </div>
                 </div>
               </div>
             </li>
