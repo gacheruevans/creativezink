@@ -3,27 +3,27 @@ import React from 'react'
 import Image from 'next/image'
 
 const links = [
-  { name: 'Open roles', href: '#' },
-  { name: 'Internship program', href: '#' },
-  { name: 'Our values', href: '#' },
-  { name: 'Meet our leadership', href: '#' },
+  { name: 'Open roles', href: '/roles' },
+  { name: 'Internship program', href: '/internship' },
+  { name: 'Our values', href: '/values' },
+  { name: 'Meet our leadership', href: '/leadership' },
 ]
 const stats = [
-  { name: 'Offices worldwide', value: '12' },
-  { name: 'Full-time colleagues', value: '300+' },
+  { name: 'Offices worldwide', value: '1' },
+  { name: 'Full-time Crossfunctional colleagues', value: '10' },
   { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
+  { name: 'Paid time off annually', value: '21' },
 ]
 
 const WorkWithUs = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gray-900 isolate sm:py-32">
+    <section className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
       <Image
         alt="background image"
         width={2830}
         height={1500}
-        src="/hero-bg-royal.jpg"
-        className="absolute inset-0 object-cover opacity-60 object-right -z-10 size-full md:object-center"
+        src="/office-lobby-bg.jpg"
+        className="absolute inset-0 object-cover  opacity-60 blur-xs object-right -z-10 size-full md:object-center"
       />
       <div
         aria-hidden="true"
