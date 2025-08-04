@@ -91,7 +91,7 @@ const Navbar = () => {
                 {/* Scroll to Top Button */}
                 <button
                     onClick={handleScrollToTop}
-                    className="fixed z-50 p-3 text-white transition rounded-full shadow-lg bottom-1/2 right-8 bg-amber-400 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="fixed z-50 p-3 text-white transition rounded-full shadow-lg bottom-1/3 right-8 bg-amber-400 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     aria-label="Scroll to top"
                     style={{ display: showScrollTop ? 'block' : 'none' }}
                 >

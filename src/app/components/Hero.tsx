@@ -7,7 +7,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="bg-slate-900">
-      <div className="py-27 mt-20 relative px-6 isolate pt-14 lg:px-8">
+      <div className="h-screen py-27 mt-25 relative px-6 isolate pt-14 lg:px-8">
         <Image
           alt="background image"
           width={2830}
@@ -27,7 +27,7 @@ export default function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
-        <div className="max-w-2xl py-32 mx-auto sm:py-48 lg:py-56">
+        <div className="top-1/2 max-w-6xl py-32 mx-auto sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative px-3 py-1 bg-white text-slate-700 hover:text-white rounded-full text-sm/6 ring-1 ring-gray-900/10 hover:ring-gray-900/20 hover:bg-indigo-900">
               Review our Terms & Conditions.{' '}
@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <h1 className="text-2xl font-semibold tracking-tight text-white text-balance sm:text-7xl">
-              Solutions that enrich SMEs
+              Solutions that enrich <span className="text-slate-950">SMEs</span>
             </h1>
             <p className="mt-8 text-lg font-medium text-white text-pretty sm:text-xl/8">
               Empower your small and medium enterprise with digital solutions designed to drive growth, efficiency, and profitability.

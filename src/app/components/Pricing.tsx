@@ -77,13 +77,13 @@ export default function Pricing() {
           className="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-semibold text-indigo-600 text-base/7">Pricing</h2>
-        <p className="mt-2 text-5xl font-semibold tracking-tight text-gray-900 text-balance sm:text-6xl">
+        <p className="mt-2 text-6xl font-semibold tracking-tight text-gray-900 text-balance sm:text-6xl">
           Choose the Right Plan for Your Business
         </p>
       </div>
-      <p className="max-w-2xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
+      <p className="max-w-6xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
         Our flexible plans are designed to meet businesses at every stage of growth, from startups seeking a simple web presence to enterprises that need fully customized, scalable solutions.
       </p>
       <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
