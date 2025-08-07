@@ -24,8 +24,8 @@ const features = [
 
 export default function About() {
   return (
-    <div id="about" className="h-screen isolate py-24 overflow-hidden bg-gray-900 sm:py-32">
-      <div className="px-6 mx-auto max-w-7xl lg:px-8">
+    <div id="about" className=" h-screen isolate py-24 overflow-hidden bg-gray-900 sm:py-32">
+      <div className="mt-0 sm:mt-46 px-6 mx-auto max-w-7xl lg:px-8">
         <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
@@ -49,14 +49,16 @@ export default function About() {
               </dl>
             </div>
           </div>
-          <Image
-            priority
-            alt="Product screenshot"
-            src="/about04.png"
-            width={2432}
-            height={1442}
-            className="sm:hidden shadow-xl w-3xl max-w-none rounded-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
-          />
+          <div className="relative lg:mt-4 lg:pr-12">
+              <Image
+                priority
+                alt="Product screenshot"
+                src="/about04.png"
+                width={768}
+                height={768}
+                className="shadow-xl w-2xs mx-auto max-w-3xl rounded-xl ring-1 ring-white/10 sm:w-3xl md:-ml-4 lg:-ml-0"
+              />
+          </div>
         </div>
       </div>
     </div>
