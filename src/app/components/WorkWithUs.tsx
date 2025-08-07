@@ -17,7 +17,7 @@ const stats = [
 
 const WorkWithUs = () => {
   return (
-    <section id="careers" className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
+    <div id="careers" className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
       <Image
         alt="background image"
         width={2830}
@@ -74,7 +74,7 @@ const WorkWithUs = () => {
           </dl>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 export default WorkWithUs

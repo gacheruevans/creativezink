@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import Navbar from './Header'
 import Image from 'next/image'
 import { CloudArrowUpIcon, UserGroupIcon, RectangleGroupIcon } from '@heroicons/react/20/solid'
 
@@ -25,10 +24,9 @@ const features = [
 
 export default function About() {
   return (
-    <div id="about" className="py-24 overflow-hidden bg-gray-900 sm:py-32">
-      <Navbar />
+    <div id="about" className="h-screen isolate py-24 overflow-hidden bg-gray-900 sm:py-32">
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
-        <div className="mt-30 grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <div className="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
               <h2 className="font-semibold text-indigo-400 text-base/7">Invest In Great Development</h2>
@@ -57,7 +55,7 @@ export default function About() {
             src="/about04.png"
             width={2432}
             height={1442}
-            className="shadow-xl w-3xl max-w-none rounded-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
+            className="sm:hidden shadow-xl w-3xl max-w-none rounded-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0"
           />
         </div>
       </div>

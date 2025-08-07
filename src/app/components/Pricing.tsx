@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 interface Tier {
@@ -16,7 +16,7 @@ const tiers: Tier[] = [
     {
         name: 'Basic',
         id: 'basic',
-        href: '#',
+        href: 'basic',
         priceMonthly: '$184',
         description: "Perfect for small businesses or startups needing a professional web presence without ongoing maintenance.",
         features: ['4-page responsive website', 'custom design iteration', 'Consultation on best framework', 'No hosting or maintenance included'],
@@ -25,7 +25,7 @@ const tiers: Tier[] = [
     {
         name: 'Enterprise',
         id: 'tier-enterprise',
-        href: '#',
+        href: 'enterprise',
         priceMonthly: '$2750',
         description: 'Our premium solution for enterprises that need a fully customized, secure, and scalable platform.',
         features: [
@@ -44,7 +44,7 @@ const tiers: Tier[] = [
     {
         name: 'Standard',
         id: 'standard',
-        href: '#',
+        href: 'standard',
         priceMonthly: '$898',
         description: "Ideal for SMEs seeking a complete digital solution with hosting, database, and admin capabilities.",
         features: [
@@ -67,7 +67,7 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 
 export default function Pricing() {
   return (
-    <div id="pricing" className="relative px-6 py-24 bg-white isolate sm:py-32 lg:px-8">
+    <div id="pricing" className="h-screen relative px-6 py-24 bg-white isolate sm:py-32 lg:px-8">
       <div aria-hidden="true" className="absolute inset-x-0 overflow-hidden -top-3 -z-10 transform-gpu px-36 blur-3xl">
         <div
           style={{
@@ -77,16 +77,17 @@ export default function Pricing() {
           className="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-semibold text-indigo-600 text-base/7">Pricing</h2>
-        <p className="mt-2 text-5xl font-semibold tracking-tight text-gray-900 text-balance sm:text-6xl">
+        <p className="mt-2 text-6xl font-semibold tracking-tight text-gray-900 text-balance sm:text-6xl">
           Choose the Right Plan for Your Business
         </p>
       </div>
-      <p className="max-w-2xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
+      <p className="max-w-6xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
         Our flexible plans are designed to meet businesses at every stage of growth, from startups seeking a simple web presence to enterprises that need fully customized, scalable solutions.
       </p>
-      <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-3">
+      
+      <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-6xl lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
@@ -137,7 +138,7 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a
+            <Link
               href={tier.href}
               aria-describedby={tier.id}
               className={classNames(
@@ -148,7 +149,7 @@ export default function Pricing() {
               )}
             >
               Get started today
-            </a>
+            </Link>
           </div>
         ))}
       </div>
