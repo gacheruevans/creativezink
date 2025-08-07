@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div id="home" className="bg-slate-900">
       <Navbar />
-      <div className="h-screen py-27 mt-25 relative px-6 isolate pt-14 lg:px-8">
+      <div className="h-screen py-27 mt-0 sm:mt-25 relative px-6 isolate pt-14 lg:px-8">
         <Image
           alt="background image"
           width={2830}
@@ -27,9 +27,9 @@ export default function Hero() {
             className="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"
           />
         </div>
-        <div className="top-1/2 max-w-6xl py-32 mx-auto sm:py-48 lg:py-56">
-          <div className="mt-48 text-center">
-            <h1 className="text-2xl font-semibold tracking-tight text-white text-balance sm:text-7xl">
+        <div className="top-0 sm:top-1/2 max-w-6xl py-32 mx-auto sm:py-48 lg:py-56">
+          <div className="mt:12 sm:mt-48 text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-white text-balance sm:text-7xl">
               Solutions that enrich <span className="text-slate-950">SMEs</span>
             </h1>
             <p className="mt-8 text-lg font-medium text-white text-pretty sm:text-xl/8">
