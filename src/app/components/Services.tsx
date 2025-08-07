@@ -3,9 +3,8 @@ import React from 'react'
 import Image from 'next/image'
 
 const Services = () => {
-
   return (
-    <div id="services" className="py-24 bg-gray-50 sm:py-32">
+    <div id="services" className="h-screen py-24 bg-gray-50 sm:py-32">
       <div className="max-w-6xl px-6 mx-auto lg:max-w-7xl lg:px-8">
         <h2 className="font-semibold text-center text-indigo-600 text-base/7">Deploy faster</h2>
         <p className="max-w-lg mx-auto mt-2 text-4xl font-semibold tracking-tight text-center text-balance text-gray-950 sm:text-5xl">
@@ -94,7 +93,10 @@ const Services = () => {
                       <div className="px-4 py-2 border-r border-gray-600/10">App.jsx</div>
                     </div>
                   </div>
-                  <div className="px-6 pt-6 pb-14">{/* Your code example */}</div>
+                  <div className="px-6 pt-6 pb-14">
+                    {
+                      
+                    }</div>
                 </div>
               </div>
             </div>

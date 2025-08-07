@@ -3,12 +3,12 @@ import React from 'react'
 import Link from 'next/link';
 
 const navigation =[
-    {name: 'home', href:'/#home'},
-    {name: 'about', href:'/#about'},
-    {name: 'services', href:'/#services'},
-    {name: 'pricing', href:'/#pricing'},
-    {name: 'team', href:'/#team'},
-    {name: 'careers', href:'/#careers'},
+    {name: 'home', href:'/'},
+    {name: 'about', href:'/about'},
+    {name: 'services', href:'/services'},
+    {name: 'pricing', href:'/pricing'},
+    {name: 'team', href:'/team'},
+    {name: 'careers', href:'/careers'},
 ];
 
 const socials = [
@@ -21,7 +21,7 @@ const socials = [
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="px-8 py-8 text-white bg-slate-900 md:px-16 lg:px-28">
+    <div id="contact" className="px-8 py-8 text-white bg-slate-900 md:px-16 lg:px-28">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div>
                 <h2 className="mb-4 text-lg font-weight-300">Office Address</h2>
@@ -71,7 +71,7 @@ const Footer = () => {
                 )}
             </ul>
         </div>
-    </footer>
+    </div>
   )
 }
 

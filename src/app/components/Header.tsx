@@ -1,17 +1,17 @@
 'use client'
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 const navigation = [
-    {name:'home' ,href:'/home'},
-    {name:'about', href: '/about'},
-    {name:'services', href:'/services'},
-    {name: 'pricing', href:'/pricing'},
-    {name: 'careers', href:'/workwithus'},
-    {name: 'team', href:'/team'},
-    {name:'contact', href:'/contact'},
+    { name: 'home' , href: '/home' },
+    { name: 'about', href: '/about' },
+    { name: 'services', href:'/services' },
+    { name: 'pricing', href:'/pricing' },
+    { name: 'careers', href:'/careers' },
+    { name: 'team', href:'/team' },
+    { name: 'contact', href:'/contact' },
 ];
 
 const Navbar = () => {
@@ -73,18 +73,20 @@ const Navbar = () => {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
                 {navigation.map((item) => (
-                    <Link 
-                    key={item.name} 
-                    href={item.href} 
-                    onClick={(e) => { 
-                        e.preventDefault();
-                        setIsActive(item.name);
-                        handleNavClick(item.name);
-                    }}
-                    className={`text-white capitalize transition-colors duration-300 ${ isActive ? 'border-b-blue-600': 'hover:text-slate-100'}`}
-                    >
-                    {item.name}
-                    </Link>
+                    <div key={item.name}  className={`${isActive === item.name ? 'border-b border-blue-600': 'hover:text-indigo-500'}`}>
+                        <Link 
+                        key={item.name} 
+                        href={item.href} 
+                        onClick={(e) => { 
+                            e.preventDefault();
+                            setIsActive(item.name);
+                            handleNavClick(item.name);
+                        }}
+                        className={`text-white capitalize transition-colors duration-300`}
+                        >
+                        {item.name}
+                        </Link>
+                    </div>
                 ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
