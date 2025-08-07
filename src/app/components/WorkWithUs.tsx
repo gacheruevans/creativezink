@@ -1,26 +1,29 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const links = [
-  { name: 'Open roles', href: '#' },
-  { name: 'Internship program', href: '#' },
-  { name: 'Our values', href: '#' },
-  { name: 'Meet our leadership', href: '#' },
+  { name: 'Open roles', href: '/roles' },
+  { name: 'Internship program', href: '/internship' },
+  { name: 'Our values', href: '/values' },
 ]
 const stats = [
-  { name: 'Offices worldwide', value: '12' },
-  { name: 'Full-time colleagues', value: '300+' },
+  { name: 'Global office', value: '1' },
+  { name: 'Full-time cross-functional colleagues', value: '10+' },
   { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
+  { name: 'Annual paid leave days', value: '21' },
 ]
 
 const WorkWithUs = () => {
   return (
-    <div className="relative py-24 overflow-hidden bg-gray-900 isolate sm:py-32">
-      <img
-        alt=""
-        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-        className="absolute inset-0 object-cover object-right -z-10 size-full md:object-center"
+    <div id="careers" className="relative py-24 overflow-hidden bg-slate-900 isolate sm:py-32">
+      <Image
+        alt="background image"
+        width={2830}
+        height={1500}
+        src="/office-lobby.jpg"
+        className="absolute inset-0 blur-xs opacity-75 object-cover object-right -z-10 size-full md:object-center"
       />
       <div
         aria-hidden="true"
@@ -49,23 +52,22 @@ const WorkWithUs = () => {
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Work with us</h2>
-          <p className="mt-8 text-lg font-medium text-gray-300 text-pretty sm:text-xl/8">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-            fugiat veniam occaecat fugiat.
+          <p className="mt-8 text-lg font-medium text-white text-pretty sm:text-xl/8">
+            Want to work with a cross functional team? Join us.
           </p>
         </div>
         <div className="max-w-2xl mx-auto mt-10 lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 font-semibold text-white gap-x-8 gap-y-6 text-base/7 sm:grid-cols-2 md:flex lg:gap-x-10">
+          <div className="grid grid-cols-1 font-semibold text-white gap-x-8 gap-y-6 text-base/7 sm:grid-cols-2 md:flex lg:gap-x-10 ">
             {links.map((link) => (
-              <a key={link.name} href={link.href}>
+              <Link className="text-white hover:text-indigo-700" key={link.name} href={link.href}>
                 {link.name} <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             ))}
           </div>
           <dl className="grid grid-cols-1 gap-8 mt-16 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse gap-1">
-                <dt className="text-gray-300 text-base/7">{stat.name}</dt>
+                <dt className="text-gray-300 text-base/7 ">{stat.name}</dt>
                 <dd className="text-4xl font-semibold tracking-tight text-white">{stat.value}</dd>
               </div>
             ))}

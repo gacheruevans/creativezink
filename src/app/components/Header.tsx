@@ -1,25 +1,26 @@
 'use client'
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
+import Link from 'next/link'
 
 const navigation = [
-    {name:'home' ,href:'/'},
-    {name:'about', href: '/about'},
-    {name:'services', href:'/services'},
-    {name: 'team', href:'/team'},
-    {name: 'packages', href:'/packages'},
-    {name:'contact', href:'/contact'},
+    { name: 'home' , href: '/home' },
+    { name: 'about', href: '/about' },
+    { name: 'services', href:'/services' },
+    { name: 'pricing', href:'/pricing' },
+    { name: 'careers', href:'/careers' },
+    { name: 'team', href:'/team' },
+    { name: 'contact', href:'/contact' },
 ];
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isActive, setIsActive] = useState('');
+    const [isActive, setIsActive] = useState('home');
     const handleNavClick = (name: string) => {
         setIsActive(name);
       
-        let sectionId = name;
+        const sectionId = name;
         // Check if an element with the given id exists and is a div
         const section = document.getElementById(sectionId);
         if (section && section.tagName.toLowerCase() === 'div') {
@@ -53,19 +54,12 @@ const Navbar = () => {
     };
    
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="fixed bg-slate-900 inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
             <div className="flex lg:flex-1">
-                <a href="/" className="-m-1.5 p-1.5">
-                    <span className="sr-only">CreativezInk</span>
-                    <Image
-                        className="h-8"
-                        src="/next.svg"
-                        alt="CreativezInk Logo"
-                        width={32}
-                        height={32}
-                    />
-                </a>
+                <Link href="/" className="-m-1.5 p-1.5 mx-10 mt-4 text-center">
+                    <p className="text-white w-auto h-10 text-2xl">CreativezInk</p>
+                </Link>
             </div>
             <div className="flex lg:hidden">
                 <button
@@ -79,25 +73,27 @@ const Navbar = () => {
             </div>
             <div className="hidden lg:flex lg:gap-x-12">
                 {navigation.map((item) => (
-                    <a 
-                    key={item.name} 
-                    href={item.href} 
-                    onClick={(e) => { 
-                        e.preventDefault();
-                        setIsActive(item.name);
-                        handleNavClick(item.name);
-                    }}
-                    className={`text-gray-800 transition-colors duration-300  ${ isActive ? 'border-b-blue-600': 'hover:text-slate-100'}`}
-                    >
-                    {item.name}
-                    </a>
+                    <div key={item.name}  className={`${isActive === item.name ? 'border-b border-blue-600': 'hover:text-indigo-500'}`}>
+                        <Link 
+                        key={item.name} 
+                        href={item.href} 
+                        onClick={(e) => { 
+                            e.preventDefault();
+                            setIsActive(item.name);
+                            handleNavClick(item.name);
+                        }}
+                        className={`text-white capitalize transition-colors duration-300`}
+                        >
+                        {item.name}
+                        </Link>
+                    </div>
                 ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                 {/* Scroll to Top Button */}
                 <button
                     onClick={handleScrollToTop}
-                    className="fixed z-50 p-3 text-white transition rounded-full shadow-lg bottom-8 right-8 bg-royal hover:bg-greenroyal"
+                    className="fixed z-50 p-3 text-white transition rounded-full shadow-lg bottom-1/3 right-8 bg-amber-400 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     aria-label="Scroll to top"
                     style={{ display: showScrollTop ? 'block' : 'none' }}
                 >
@@ -109,16 +105,9 @@ const Navbar = () => {
             <div className="fixed inset-0 z-50" />
             <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
-                    <a href="#" className="-m-1.5 p-1.5">
-                    <span className="sr-only">CreativezInk</span>
-                    <Image
-                        alt=""
-                        src="/next.svg"
-                        width={32}
-                        height={32}
-                        className="w-auto h-12"
-                    />
-                    </a>
+                    <Link href="/" className="-m-1.5 p-1.5 mx-10 mt-4 text-center">
+                        <p className="text-slate-900 w-auto h-10 text-2xl">CreativezInk</p>
+                    </Link>
                     <button
                     type="button"
                     onClick={() => setMobileMenuOpen(false)}
@@ -130,10 +119,9 @@ const Navbar = () => {
                 </div>
                 <div className="flow-root mt-6">
                     <div className="-my-6 divide-y divide-gray-500/10">
-                    {/* <div className=""> */}
                         {navigation.map((item) => (
-                        <div className={`py-6 space-y-2 ${isActive === item.name ? 'border-b-2 border-white' : ''}`} key={item.name}>
-                            <a
+                        <div className="py-6 space-y-2" key={item.name}>
+                            <Link
                             key={item.name}
                             href={item.href}
                             onClick={(e) => {
@@ -141,19 +129,17 @@ const Navbar = () => {
                                 setIsActive(item.name);
                                 handleNavClick(item.name);
                             }}
-                            className={`block px-3 py-2 -mx-3 font-semibold text-gray-900 rounded-lg text-base/7 hover:bg-gray-50 ${isActive === item.name ? 'item-active, underline' : 'no-underline'}`}
+                            className={`block px-3 py-2 -mx-3 font-semibold text-slate-900 rounded-lg text-base/7 hover:bg-gray-50 ${isActive === item.name ? "item-active, border border-b-2 border-white" : " "}`}
                             >
                             {item.name}
-                            </a>
+                            </Link>
                         </div>
                         ))}
-                    {/* </div> */}
                     <div className="py-6">
                         <a
                         href="#"
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                         >
-                        
                         </a>
                     </div>
                     </div>
