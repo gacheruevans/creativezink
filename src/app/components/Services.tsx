@@ -1,0 +1,114 @@
+'use client'
+import Image from 'next/image'
+const Services = () => {
+  return (
+    <div id="services" className="h-screen py-24 bg-gray-50 sm:py-32">
+      <div className="max-w-6xl px-6 mx-auto lg:max-w-7xl lg:px-8">
+        <h2 className="font-semibold text-center text-indigo-600 text-base/7">Deploy faster</h2>
+        <p className="max-w-lg mx-auto mt-2 text-4xl font-semibold tracking-tight text-center text-balance text-gray-950 sm:text-5xl">
+          Everything you need to deploy your app
+        </p>
+        <div className="grid gap-4 mt-10 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+          <div className="relative lg:row-span-2">
+            <div className="absolute bg-purple-500 rounded-lg inset-px lg:rounded-l-4xl" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
+                  Mobile friendly
+                </p>
+                <p className="max-w-lg mt-2 text-white text-sm/6 max-lg:text-center">
+                  Reach your users anytime, anywhere. We design and develop responsive mobile-first solutions that deliver a seamless experience across Android, iOS, and web devices.
+                </p>
+              </div>
+              <div className="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
+                  <Image
+                    alt=""
+                    src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
+                    width={400}
+                    height={400}  
+                    className="object-cover object-top size-full"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="absolute rounded-lg shadow-sm pointer-events-none inset-px outline outline-black/5 lg:rounded-l-4xl" />
+          </div>
+          <div className="relative max-lg:row-start-1">
+            <div className="absolute bg-white rounded-lg inset-px max-lg:rounded-t-4xl" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                <p className="mt-2 text-lg font-medium tracking-tight text-blue-800 max-lg:text-center">Performance</p>
+                <p className="max-w-lg mt-2 text-slate-800 text-sm/6 max-lg:text-center">
+                  Our optimized deployment pipelines ensure your apps run fast and efficiently, giving users a smooth experience while scaling effortlessly with your business growth.
+                </p>
+              </div>
+              <div className="flex items-center justify-center flex-1 px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
+                  width={400}
+                  height={400}
+                  className="w-full max-lg:max-w-xs"
+                />
+              </div>
+            </div>
+            <div className="absolute rounded-lg shadow-sm pointer-events-none inset-px outline outline-black/5 max-lg:rounded-t-4xl" />
+          </div>
+          <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+            <div className="absolute bg-blue-400 rounded-lg inset-px" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+              <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Security</p>
+                <p className="max-w-lg mt-2 text-white text-sm/6 max-lg:text-center">
+                  Your business data is safe with us. We integrate enterprise-grade security, SSL encryption, and automated backups to keep your applications and customer information protected.
+                </p>
+              </div>
+              <div className="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
+                <Image
+                  alt=""
+                  src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-security.png"
+                  width={400}
+                  height={400}
+                  className="h-[min(152px,40cqw)] object-cover"
+                />
+              </div>
+            </div>
+            <div className="absolute rounded-lg shadow-sm pointer-events-none inset-px outline outline-black/5" />
+          </div>
+          <div className="relative lg:row-span-2">
+            <div className="absolute bg-amber-400 rounded-lg inset-px max-lg:rounded-b-4xl lg:rounded-r-4xl" />
+            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+              <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                <p className="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">
+                  Powerful APIs
+                </p>
+                <p className="max-w-lg mt-2 text-white text-sm/6 max-lg:text-center">
+                  Extend functionality with secure, well-documented APIs that connect your software to third-party tools, enabling automation, data exchange, and enhanced capabilities.
+                </p>
+              </div>
+              <div className="relative w-full min-h-120 grow">
+                <div className="absolute bottom-0 right-0 overflow-hidden bg-gray-900 shadow-2xl top-10 left-10 rounded-tl-xl outline outline-white/10">
+                  <div className="flex bg-gray-900 outline outline-white/5">
+                    <div className="flex -mb-px font-medium text-gray-400 text-sm/6">
+                      <div className="px-4 py-2 text-white border-b border-r border-r-white/10 border-b-white/20 bg-white/5">
+                        NotificationSetting.jsx
+                      </div>
+                      <div className="px-4 py-2 border-r border-gray-600/10">App.jsx</div>
+                    </div>
+                  </div>
+                  <div className="px-6 pt-6 pb-14">
+                    {
+                      
+                    }</div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute rounded-lg shadow-sm pointer-events-none inset-px outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-r-4xl" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+export default Services
