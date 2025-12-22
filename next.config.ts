@@ -12,12 +12,6 @@ const nextConfig: NextConfig = {
         hostname: "creativezink.co.ke",
         pathname: "/public/**",
       },
-      {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3000",
-        pathname: "/public/**",
-      },
     ],
   },
 };

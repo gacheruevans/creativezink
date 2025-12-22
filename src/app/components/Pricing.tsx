@@ -1,68 +1,67 @@
-import React from 'react'
-import Link from 'next/link'
 import { CheckIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 
 interface Tier {
-    name: string
-    id: string
-    href: string
-    priceMonthly: string
-    description: string
-    features: string[]
-    featured: boolean
+  name: string
+  id: string
+  href: string
+  priceMonthly: string
+  description: string
+  features: string[]
+  featured: boolean
 }
 
 const tiers: Tier[] = [
-    {
-        name: 'Basic',
-        id: 'basic',
-        href: 'basic',
-        priceMonthly: '$184',
-        description: "Perfect for small businesses or startups needing a professional web presence without ongoing maintenance.",
-        features: ['4-page responsive website', 'custom design iteration', 'Consultation on best framework', 'No hosting or maintenance included'],
-        featured: false,
-    },
-    {
-        name: 'Enterprise',
-        id: 'tier-enterprise',
-        href: 'enterprise',
-        priceMonthly: '$2750',
-        description: 'Our premium solution for enterprises that need a fully customized, secure, and scalable platform.',
-        features: [
-          'Fully custom website (4 iterations)',
-          'Admin Dashboard & User login access',
-          'Database support',
-          'SEO',
-          'CI/CD deployment pipelines',
-          'Hosting & domain included',
-          'Technical documentation',
-          'AI integrated assistant',
-          'Full maintenance & support $800/month'
-        ],
-        featured: true,
-    },
-    {
-        name: 'Standard',
-        id: 'standard',
-        href: 'standard',
-        priceMonthly: '$898',
-        description: "Ideal for SMEs seeking a complete digital solution with hosting, database, and admin capabilities.",
-        features: [
-          'Hosting & domain included',
-          '4-page responsive website',
-          'custom design iterations',
-          'Admin Dashboard & User login access',
-          'Database support',
-          'Email hosting & integration',
-          'Optional maintenance: $500/month'
-        ],
-        featured: false,
-    },
-    
+  {
+    name: 'Basic',
+    id: 'basic',
+    href: 'basic',
+    priceMonthly: '$450',
+    description: "Perfect for small businesses or startups needing a professional web presence without ongoing maintenance.",
+    features: ['4-page responsive website', 'custom design iteration', 'Consultation on best framework', 'No hosting or maintenance included'],
+    featured: false,
+  },
+  {
+    name: 'Enterprise',
+    id: 'tier-enterprise',
+    href: 'enterprise',
+    priceMonthly: '$5500',
+    description: 'Our premium solution for enterprises that need a fully customized, secure, and scalable platform. Dedicated team of developers and designers.',
+    features: [
+      'Fully custom website (4 iterations)',
+      'Admin Dashboard & User login access',
+      'Database support',
+      'SEO',
+      'CI/CD deployment pipelines',
+      'Hosting & domain included',
+      'Technical documentation',
+      'AI integrated assistant',
+      'Full maintenance & support $3800/month'
+    ],
+    featured: true,
+  },
+  {
+    name: 'Standard',
+    id: 'standard',
+    href: 'standard',
+    priceMonthly: '$900',
+    description: "Ideal for SMEs seeking a complete digital solution with hosting, database, and admin capabilities.",
+    features: [
+      'Hosting & domain included',
+      '4-page responsive website',
+      'custom design iterations',
+      'Admin Dashboard & User login access',
+      'Database support',
+      'Email hosting & integration',
+      'Optional maintenance: $1000/month'
+    ],
+    featured: false,
+  },
+
 ]
 
 function classNames(...classes: (string | false | null | undefined)[]): string {
-    return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ')
 }
 
 export default function Pricing() {
@@ -79,14 +78,14 @@ export default function Pricing() {
       </div>
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-semibold text-indigo-600 text-base/7">Pricing</h2>
-        <p className="mt-2 text-6xl font-semibold tracking-tight text-gray-900 text-balance sm:text-6xl">
+        <p className="mt-2 text-6xl font-semibold tracking-tight text-lime-500 text-balance sm:text-6xl">
           Choose the Right Plan for Your Business
         </p>
       </div>
       <p className="max-w-6xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
         Our flexible plans are designed to meet businesses at every stage of growth, from startups seeking a simple web presence to enterprises that need fully customized, scalable solutions.
       </p>
-      
+
       <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-6xl lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
           <div
@@ -103,7 +102,7 @@ export default function Pricing() {
           >
             <h3
               id={tier.id}
-              className={classNames(tier.featured ? 'text-indigo-400' : 'text-indigo-600', 'text-base/7 font-semibold')}
+              className={classNames(tier.featured ? 'text-lime-400' : 'text-lime-600', 'text-base/7 font-semibold')}
             >
               {tier.name}
             </h3>

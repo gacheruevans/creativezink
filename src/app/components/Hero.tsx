@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="top-0 sm:top-1/2 max-w-6xl py-32 mx-auto sm:py-48 lg:py-56">
           <div className="mt:12 sm:mt-48 text-center">
             <h1 className="text-4xl font-semibold tracking-tight text-white text-balance sm:text-7xl">
-              Solutions that enrich <span className="text-slate-950">SMEs</span>
+              Solutions that enrich <span className="text-green-500">SMEs</span>
             </h1>
             <p className="mt-8 text-lg font-medium text-white text-pretty sm:text-xl/8">
               Empower your small and medium enterprise with digital solutions designed to drive growth, efficiency, and profitability.
