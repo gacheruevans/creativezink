@@ -66,7 +66,7 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 
 export default function Pricing() {
   return (
-    <div id="pricing" className="h-screen relative px-6 py-24 bg-white isolate sm:py-32 lg:px-8">
+    <div id="pricing" className="min-h-screen relative px-6 py-24 bg-white isolate sm:py-32 lg:px-8">
       <div aria-hidden="true" className="absolute inset-x-0 overflow-hidden -top-3 -z-10 transform-gpu px-36 blur-3xl">
         <div
           style={{
@@ -78,15 +78,15 @@ export default function Pricing() {
       </div>
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-semibold text-indigo-600 text-base/7">Pricing</h2>
-        <p className="mt-2 text-6xl font-semibold tracking-tight text-lime-500 text-balance sm:text-6xl">
+        <p className="mt-2 text-4xl font-semibold tracking-tight text-lime-500 text-balance sm:text-5xl">
           Choose the Right Plan for Your Business
         </p>
       </div>
-      <p className="max-w-6xl mx-auto mt-6 text-lg font-medium text-center text-gray-600 text-pretty sm:text-xl/8">
+      <p className="max-w-2xl mx-auto mt-4 text-base font-medium text-center text-gray-600 text-pretty sm:text-lg/8">
         Our flexible plans are designed to meet businesses at every stage of growth, from startups seeking a simple web presence to enterprises that need fully customized, scalable solutions.
       </p>
 
-      <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-16 gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-6xl lg:grid-cols-3">
+      <div className="grid items-center max-w-lg grid-cols-1 mx-auto mt-10 gap-y-6 sm:mt-16 sm:gap-y-0 lg:max-w-6xl lg:grid-cols-3">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
@@ -97,7 +97,7 @@ export default function Pricing() {
                 : tierIdx === 0
                   ? 'rounded-t-3xl sm:rounded-b-none lg:rounded-tr-none lg:rounded-bl-3xl'
                   : 'sm:rounded-t-none lg:rounded-tr-3xl lg:rounded-bl-none',
-              'rounded-3xl p-8 ring-1 ring-gray-900/10 sm:p-10',
+              'rounded-3xl p-6 ring-1 ring-gray-900/10 sm:p-8',
             )}
           >
             <h3
@@ -110,7 +110,7 @@ export default function Pricing() {
               <span
                 className={classNames(
                   tier.featured ? 'text-amber-400' : 'text-gray-900',
-                  'text-5xl font-semibold tracking-tight',
+                  'text-4xl font-semibold tracking-tight',
                 )}
               >
                 {tier.priceMonthly}
@@ -124,7 +124,7 @@ export default function Pricing() {
               role="list"
               className={classNames(
                 tier.featured ? 'text-gray-300' : 'text-gray-600',
-                'mt-8 space-y-3 text-sm/6 sm:mt-10',
+                'mt-6 space-y-2 text-sm/6 sm:mt-8',
               )}
             >
               {tier.features.map((feature) => (
@@ -144,7 +144,7 @@ export default function Pricing() {
                 tier.featured
                   ? 'bg-indigo-500 text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500'
                   : 'text-indigo-600 ring-1 ring-indigo-200 ring-inset hover:ring-indigo-300 focus-visible:outline-indigo-600',
-                'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
+                'mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-8',
               )}
             >
               Get started today
