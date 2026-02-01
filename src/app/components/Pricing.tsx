@@ -1,5 +1,8 @@
+'use client'
+
 import { CheckIcon } from '@heroicons/react/20/solid'
-import Link from 'next/link'
+import { useState } from 'react'
+import PricingModal from './PricingModal'
 
 interface Tier {
   name: string
@@ -65,6 +68,14 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 }
 
 export default function Pricing() {
+  const [selectedTier, setSelectedTier] = useState<Tier | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = (tier: Tier) => {
+    setSelectedTier(tier)
+    setIsModalOpen(true)
+  }
+
   return (
     <div id="pricing" className="min-h-screen relative px-6 py-24 bg-white isolate sm:py-32 lg:px-8">
       <div aria-hidden="true" className="absolute inset-x-0 overflow-hidden -top-3 -z-10 transform-gpu px-36 blur-3xl">
@@ -137,21 +148,26 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <Link
-              href={tier.href}
-              aria-describedby={tier.id}
+            <button
+              onClick={() => openModal(tier)}
               className={classNames(
                 tier.featured
                   ? 'bg-indigo-500 text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500'
                   : 'text-indigo-600 ring-1 ring-indigo-200 ring-inset hover:ring-indigo-300 focus-visible:outline-indigo-600',
-                'mt-6 block rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-8',
+                'mt-6 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-8 cursor-pointer',
               )}
             >
               Get started today
-            </Link>
+            </button>
           </div>
         ))}
       </div>
+
+      <PricingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        tier={selectedTier}
+      />
     </div>
   )
 }
