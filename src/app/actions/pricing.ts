@@ -1,5 +1,9 @@
 "use server";
 
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function submitPricingForm(formData: FormData) {
   const firstName = formData.get("first_name");
   const lastName = formData.get("last_name");
@@ -15,21 +19,46 @@ export async function submitPricingForm(formData: FormData) {
     };
   }
 
-  // Mocking an email submission delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
+    // Send email to the business
+    const result = await resend.emails.send({
+      from: "Pricing Inquiry <onboarding@resend.dev>",
+      to: "evans@creativezink.co.ke",
+      replyTo: email as string,
+      subject: `New Pricing Inquiry from ${firstName} ${lastName}`,
+      html: `
+        <h2>New Pricing Inquiry</h2>
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Contact:</strong> ${contact}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Plan Interested In:</strong> ${planName || "Not specified"}</p>
+      `,
+    });
 
-  console.log("Pricing Form Submission Received:");
-  console.log("First Name:", firstName);
-  console.log("Last Name:", lastName);
-  console.log("Contact:", contact);
-  console.log("Email:", email);
-  console.log("Plan:", planName);
-  console.log("Target Email: evans@creativezink.co.ke");
+    if (result.error) {
+      console.error("Error sending email:", result.error);
+      return {
+        success: false,
+        message: "Failed to submit your inquiry. Please try again later.",
+      };
+    }
 
-  // In a real application, you would send an email here using a service like Resend.
-  
-  return {
-    success: true,
-    message: "Thank you for your interest! We'll get back to you soon.",
-  };
+    console.log("Pricing Form Email Sent:");
+    console.log("From:", email);
+    console.log("Name:", `${firstName} ${lastName}`);
+    console.log("Contact:", contact);
+    console.log("Plan:", planName);
+
+    return {
+      success: true,
+      message: "Thank you for your interest! We'll get back to you soon.",
+    };
+  } catch (error) {
+    console.error("Unexpected error submitting pricing form:", error);
+    return {
+      success: false,
+      message: "An unexpected error occurred. Please try again later.",
+    };
+  }
 }
