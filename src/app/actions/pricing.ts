@@ -22,7 +22,7 @@ export async function submitPricingForm(formData: FormData) {
   try {
     // Send email to the business
     const result = await resend.emails.send({
-      from: "Pricing Inquiry <onboarding@resend.dev>",
+      from: `Pricing Inquiry <${email}>`,
       to: "evans@creativezink.co.ke",
       replyTo: email as string,
       subject: `New Pricing Inquiry from ${firstName} ${lastName}`,

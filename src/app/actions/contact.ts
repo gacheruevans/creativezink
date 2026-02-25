@@ -20,7 +20,7 @@ export async function submitContactForm(formData: FormData) {
   try {
     // Send email to the business
     const result = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: `Contact Form <${email}>`,
       to: "evans@creativezink.co.ke",
       replyTo: email as string,
       subject: `New Contact Form Submission from ${name}`,
