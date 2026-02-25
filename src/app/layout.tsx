@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Footer from "./components/Footer";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         {children}
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );
