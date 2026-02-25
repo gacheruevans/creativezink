@@ -2,7 +2,7 @@
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || "re_fTJ9C2hA_N9kwemY5RHXnAqD7LJkQAjHk");
 
 export async function submitPricingForm(formData: FormData) {
   const firstName = formData.get("first_name");
